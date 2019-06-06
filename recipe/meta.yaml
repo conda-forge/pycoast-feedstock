@@ -1,8 +1,8 @@
 {% set name = "pycoast" %}
-{% set version = "1.2.2" %}
+{% set version = "1.2.3" %}
 {% set file_ext = "tar.gz" %}
 {% set hash_type = "sha256" %}
-{% set hash_value = "5277d8833a6f8c5c757fde020d963dd4f57f47c5ed390ef1567e0126ff9403f0" %}
+{% set hash_value = "68f0f595a69fa03f9908c6de2087babcb78636e60d15b28cf75300418a1f43d3" %}
 
 package:
   name: '{{ name|lower }}'
