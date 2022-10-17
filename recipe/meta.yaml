@@ -1,5 +1,5 @@
 {% set name = "pycoast" %}
-{% set version = "1.5.0" %}
+{% set version = "1.6.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 0fe1a7fb60591ebed720c2db4438e8109f4aee4f11470f4cd82d7dfcefc10da8
+  sha256: 79b42b1f7366d64513c7aede902472ef48858ace9ee3314b65e5666d4077c89b
 
 build:
   number: 0
@@ -16,11 +16,12 @@ build:
 
 requirements:
   host:
-    - python >=3.7
+    - python >=3.8
     - pip
     - setuptools
+    - versioneer-518
   run:
-    - python >=3.7
+    - python >=3.8
     - pyshp
     - numpy
     - pyproj
