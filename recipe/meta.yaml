@@ -1,3 +1,4 @@
+{% set python_min = '3.10' %}
 {% set name = "pycoast" %}
 {% set version = "1.7.1" %}
 
@@ -6,22 +7,22 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 301d8fcf38805f23ddbcbfbf2e9bd6c466aaee92553ffceccee0f2b7ad7e3637
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
-    - python >=3.10
+    - python {{ python_min }}
     - pip
     - setuptools
     - versioneer-518
   run:
-    - python >=3.10
+    - python >={{ python_min }}
     - pyshp
     - numpy
     - pyproj
@@ -29,6 +30,8 @@ requirements:
     - aggdraw
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - pycoast
     - pycoast.tests
