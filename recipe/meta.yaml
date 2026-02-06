@@ -1,6 +1,6 @@
-{% set python_min = '3.10' %}
+{% set python_min = "3.10" %}
 {% set name = "pycoast" %}
-{% set version = "1.7.1" %}
+{% set version = "1.8.0" %}
 
 package:
   name: {{ name|lower }}
@@ -8,10 +8,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 301d8fcf38805f23ddbcbfbf2e9bd6c466aaee92553ffceccee0f2b7ad7e3637
+  sha256: a98633b657b3113077072240c45300450be5860c6536362e4f93bbc3251b70d2
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
@@ -38,8 +38,7 @@ test:
 
 about:
   home: https://github.com/pytroll/pycoast
-  license: GPL-3.0-or-later
-  license_family: GPL3
+  license: Apache-2.0
   license_file: LICENSE.txt
   summary: Writing of coastlines, borders and rivers to images in Python
   description: Writing of coastlines, borders and rivers to images in Python
